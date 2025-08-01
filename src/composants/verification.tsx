@@ -21,7 +21,7 @@ function Verification() {
             <div className='w-full flex flex-col items-center  bg-white gap-6 pt-5'>
                 <Btn />
             </div>
-            <div className='flex items-center justify-between gap-2 w-full pt-5'>
+            <div className='flex items-center justify-center gap-2 w-full pt-5'>
                 <p>By clicking continue, you agree to our Terms of Service and Privacy Policy.</p>
             </div>
         </section>
