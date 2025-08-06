@@ -5,14 +5,14 @@ import google from '/public/Frame 22.png'
 import Btn from '../sous_composants/btnconnexion.tsx'
 import Terms from '../sous_composants/terms.tsx'
 import Timeline from '../sous_composants/barre_de_navigation.tsx'
-function Connexion() {
+function Connexion1() {
 
   return (
     <>
         
             <section className="flex flex-1 flex-col items-center w-full justify-center h-screen ">
                 <div className='w-full bg-white'>
-                    <Entete label="Connexion" paragraph="Rentrez vos infos pour vous connecter." />
+                    <Entete label="Creation de compte" paragraph="Rentrez vos infos pour vous connecter." />
                 </div>
                 <div className=' w-full flex flex-col items-center justify-center bg-white'>
                     <form action="" className='flex flex-col gap-4  w-full'>
@@ -61,4 +61,4 @@ function Connexion() {
   )
 }
 
-export default Connexion
+export default Connexion1

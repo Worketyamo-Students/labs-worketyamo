@@ -5,6 +5,7 @@ import google from '/public/Frame 22.png'
 import Btn from '../sous_composants/btnconnexion.tsx'
 import Terms from '../sous_composants/terms.tsx'
 import Timeline from '../sous_composants/barre_de_navigation.tsx'
+import { Link } from 'react-router-dom'
 function Connexion() {
 
   return (
@@ -44,9 +45,10 @@ function Connexion() {
                                 <button  className='border border-gray-300 p-2 rounded w-full flex gap-2 items-center justify-center focus:ring-2 focus:ring-blue-500'><img src={google} alt="" /> Github</button>
                             </div>
                 </div>
-                <div className='w-full flex flex-col items-center justify-center bg-white gap-6 pt-5'>
+
+                <Link to="/encours" className='w-full flex flex-col items-center justify-center bg-white gap-6 pt-5'>
                     <Btn />
-                </div>
+                </Link>
                 <Terms />                
                 <div className='flex gap-4 justify-between w-full h-full items-center mt-25  text-white '>
                     <Timeline  color='bg-[#00539C]'/>

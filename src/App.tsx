@@ -1,6 +1,7 @@
 import './App.css'
 import {Routes , Route, BrowserRouter as Router , } from 'react-router-dom'
 import Connexion from './composants/createcompte.tsx'
+import Connexion1 from './composants/encours.tsx'
 import Verification from './composants/verification.tsx'
 import Finalisation from './composants/finalisation.tsx'
 import Welcome from './composants/bienvenue.tsx'
@@ -16,6 +17,12 @@ function App() {
                 <Connexion />
               </All>
             } />
+            <Route path="/encours" element={
+              <All>
+                <Connexion1 />
+              </All>
+            } />
+
             <Route path="/verification" element={
               <All>
                 <Verification />
