@@ -1,5 +1,5 @@
 import './App.css'
-import {Routes , Route, BrowserRouter as Router} from 'react-router-dom'
+import {Routes , Route, BrowserRouter as Router , } from 'react-router-dom'
 import Connexion from './composants/createcompte.tsx'
 import Verification from './composants/verification.tsx'
 import Finalisation from './composants/finalisation.tsx'
@@ -11,12 +11,26 @@ function App() {
     <>
         <Router>
           <Routes>
-            <Route path="/" element={<All />} />
-
-            <Route path="/inscription" element={<Connexion />} />
-            <Route path="/verification" element={<Verification />} />
-            <Route path="/finalisation" element={<Finalisation />} />
-            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/inscription" element={
+              <All>
+                <Connexion />
+              </All>
+            } />
+            <Route path="/verification" element={
+              <All>
+                <Verification />
+              </All>
+            } />
+            <Route path="/finalisation" element={
+              <All>
+                <Finalisation />
+              </All>
+            } />
+            <Route path="/welcome" element={
+              <All>
+                <Welcome />
+              </All>
+            } />
 
           </Routes>
         </Router>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink , useLocation} from 'react-router-dom'
 import '/src/App.css'
 
 type LeftpartProps = {
@@ -6,29 +6,32 @@ type LeftpartProps = {
     label : string
     paragraph: string
     link: string
+    children?: React.ReactNode
 
 };
-const Aside: React.FC<LeftpartProps> = ({ icon, label , paragraph , link}) => {
+const Aside: React.FC<LeftpartProps> = ({ icon, label , paragraph , link, children}) => {
+    const location = useLocation()
+    const isActive = location.pathname === link;
 
   return (
 
     <>
-
-            <Link to={link} className="flex gap-8 ">
+        
+            <NavLink to={link}  className="flex gap-8 ">
 
                 <div className="flex items-center  flex-col ">
 
                     <div className="rounded-xl border border-black w-14 h-12 flex items-center justify-center "> 
-                        <img src={`/${icon}.png`} alt="icon" />
+                        <img src={`/${icon}.png`} alt="icon" className={`   ${isActive ? "text-black " : " "}`} />
                     </div>
 
                 </div>
                 <div className=" flex flex-col items-start justify-center gap-2">
-                    <h1 className="font-bold"> {label}</h1>
+                    <h1 className={` text-gray-500 text-xl first-line ${isActive ? "text-black font-bold" : " "}`}> {label}</h1>
                     <p>{paragraph}</p>
                 </div>
-            </Link>
-
+            </NavLink>
+            {children}
     </>
   )
 }       

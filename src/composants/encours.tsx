@@ -49,7 +49,7 @@ function Connexion() {
                 </div>
                 <Terms />                
                 <div className='flex gap-4 justify-between w-full h-full items-center mt-25  text-white '>
-                    <Timeline  color='bg-[#00539C]'/>
+                    <Timeline  color='bg-[#FFA273]'/>
                     <Timeline  color='bg-[#D9D9D9]'/>
                     <Timeline  color='bg-[#D9D9D9]'/>
                     <Timeline  color='bg-[#D9D9D9]'/>

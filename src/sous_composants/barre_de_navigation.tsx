@@ -1,15 +1,11 @@
 import '../App.css'
-function Barre() {
-
+interface TimelineProps  {
+  color? : string
+}
+const Timeline : React.FC<TimelineProps> = ({color }) => {
   return (
-    <>
-                <div className='w-[100px] h-[8px] bg-orange rounded-lg flex-1'>a</div>
-                <div className='w-[100px] h-[8px] bg-gray-300 rounded-lg flex-1'>a</div>
-                <div className='w-[100px] h-[8px] bg-gray-300 rounded-lg flex-1'>a</div>
-                <div className='w-[100px] h-[8px] bg-gray-300 rounded-lg flex-1'>a</div>
-
-    </>
+    
+      <div className={`${color} w-100/100 h-[6px] rounded-full`}></div>
   )
 }
-
-export default Barre
+export default Timeline

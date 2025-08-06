@@ -1,7 +1,8 @@
 import '../App.css'
 import Entete from '../sous_composants/entete.tsx'
-import Barre from '../sous_composants/barre_de_navigation.tsx'
 import Btn from '../sous_composants/btnconnexion.tsx'
+import Terms from '../sous_composants/terms.tsx'
+import Timeline from '../sous_composants/barre_de_navigation.tsx'
 
 function Verification() {
 
@@ -21,13 +22,14 @@ function Verification() {
             <div className='w-full flex flex-col items-center  bg-white gap-6 pt-5'>
                 <Btn />
             </div>
-            <div className='flex items-center justify-center gap-2 w-full pt-5'>
-                <p>By clicking continue, you agree to our Terms of Service and Privacy Policy.</p>
-            </div>
+            <Terms />
         </section>
-            <div className=' flex gap-4 justify-between w-full items-center mt-60 text-white'>
-                <Barre />
-            </div>
+        <div className='flex gap-4 justify-between w-full h-full items-center mt-25  text-white '>
+            <Timeline  color='bg-[#FFA273] opacity-56' />
+            <Timeline  color='bg-[#FFA273]'/>
+            <Timeline  color='bg-[#D9D9D9]'/>
+            <Timeline  color='bg-[#D9D9D9]'/>
+        </div>
 
     </>
   )
