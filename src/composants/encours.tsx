@@ -2,10 +2,31 @@ import '../App.css'
 import Entete from '../sous_composants/entete.tsx'
 import git from '/public/Vector.png'
 import google from '/public/Frame 22.png'
+import { useState } from 'react'
 import Btn from '../sous_composants/btnconnexion.tsx'
 import Terms from '../sous_composants/terms.tsx'
 import Timeline from '../sous_composants/barre_de_navigation.tsx'
+import { useNavigate } from 'react-router-dom'
+import { loginUser } from '../Connexion/auth.tsx'
 function Connexion1() {
+        const [email, setEmail] = useState('');
+        const [password, setPassword] = useState('');
+        const navigate = useNavigate();
+        const handleSubmit = async ( e: React.FormEvent) => {
+            e.preventDefault()
+            console.log('Email:', email);
+            console.log('password :', password)
+            loginUser(email, password)
+                .then(() => {
+                    navigate('/validation');
+                })
+                .catch((error) => {
+                    console.error("Login error:", error);
+                });
+            console.log("succes")
+
+        }
+    
 
   return (
     <>
@@ -19,15 +40,29 @@ function Connexion1() {
                         <div className='items-start gap-4 flex flex-col w-full'>
                             <label>Email:</label>
                             <div className='w-full p-1'>
-                                <input type="email"  placeholder='votreemail@gmail.com' required className='border border-gray-300 p-2 rounded  outline-none w-full focus:ring-2 focus:ring-blue-500' />
+                                    <input type="email"  
+                                        placeholder='votreemail@gmail.com'
+                                        required 
+                                        className='border border-gray-300 p-2 rounded  outline-none w-full focus:ring-2 focus:ring-blue-500' 
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
                             </div>
                         </div>
                         <div className='items-start gap-4 flex flex-col w-full p-1'>
                             <label htmlFor="password">Mot de passe:</label>
                             <div className='w-full'>
-                                <input type="password" id="password" name="password" required className='border border-gray-300 p-2 rounded outline-none w-full focus:ring-2 focus:ring-blue-500' />
+                                    <input type="password" 
+                                        name="password" required 
+                                        className='border border-gray-300 p-2 rounded outline-none w-full focus:ring-2 focus:ring-blue-500'
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+
+                                     />
                             </div>
                         </div>
+                        <button type="submit" onClick={handleSubmit} >Se connecter</button>
+
                     </form>
                 </div>
                 <div className='flex items-center justify-between gap-2 w-68 pt-5'>

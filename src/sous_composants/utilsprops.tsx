@@ -17,13 +17,15 @@ const Aside: React.FC<LeftpartProps> = ({ icon, label , paragraph , link, childr
 
     <>
         
-            <NavLink to={link}  className="flex gap-8 ">
+            <NavLink to={link}  className="flex gap-8 items-start">
 
                 <div className="flex items-center  flex-col ">
 
-                    <div className="rounded-xl border border-black w-14 h-12 flex items-center justify-center "> 
+                    <div className="rounded-xl border border-div w-14 h-12 flex items-center justify-center "> 
                         <img src={`/${icon}.png`} alt="icon" className={`   ${isActive ? "text-black " : " "}`} />
                     </div>
+                    <hr className="w-[1px] h-36 bg-div" />
+
 
                 </div>
                 <div className=" flex flex-col items-start justify-center gap-2">

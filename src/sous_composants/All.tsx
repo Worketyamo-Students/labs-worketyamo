@@ -7,7 +7,7 @@ const All = ({ children }: { children: React.ReactNode }) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   return isDesktop ? (
-    <div className="flex h-screen gap-8 p-4  justify-center">
+    <div className="flex h-screen gap-8 p-4  justify-center  ">
       <div className=''>
          <Aside />
          

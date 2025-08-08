@@ -68,7 +68,7 @@ function Leftpart() {
 
   return (
     <>
-        <div className='flex flex-col justify-between gap-10 bg-gray-100 p-4 h-screen'>
+        <div className='flex flex-col justify-between  bg-bg p-4 h-auto '>
             <Aside icon="Person" label="Inscription" paragraph="Entrez vos informations personnelles." link="/inscription" />
             <Aside icon="Mail" label="Vérification" paragraph="Vérifiez votre adresse e-mail." link="/verification" />
             <Aside icon="Check" label="Finalisation" paragraph="Complétez votre inscription." link="/finalisation" />

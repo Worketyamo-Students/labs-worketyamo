@@ -8,6 +8,7 @@ function Welcome() {
 
   return (
     <>
+    <section className='flex flex-col justify-between gap-8'>
         <section className="flex flex-col items-center w-full justify-center gap-6  ">
             <div className='w-full bg-white'>
                 <Entete label="Bienvenue" paragraph="Plus que 3 petites minutes ........" />
@@ -20,13 +21,13 @@ function Welcome() {
             </div>
             <Terms />
         </section>
-        <div className='flex gap-4 justify-between w-full h-full items-center mt-25  text-white '>
+        <div className='flex gap-4 justify-between w-full h-full items-center   text-white '>
             <Timeline  color='bg-[#FFA273] opacity-56' />
             <Timeline  color='bg-[#FFA273]'/>
             <Timeline  color='bg-gradient-to-r from-[#FFA273]  to-[#00539C]'/>
             <Timeline  color='bg-[#00539C]'/>
         </div>
-
+    </section>
     </>
   )
 }
