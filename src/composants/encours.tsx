@@ -8,26 +8,33 @@ import Terms from '../sous_composants/terms.tsx'
 import Timeline from '../sous_composants/barre_de_navigation.tsx'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../Connexion/auth.tsx'
+import { AxiosError } from 'axios';
 function Connexion1() {
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
+        const [error, setError] = useState('');
         const navigate = useNavigate();
         const handleSubmit = async ( e: React.FormEvent) => {
             e.preventDefault()
             console.log('Email:', email);
             console.log('password :', password)
-            loginUser(email, password)
-                .then(() => {
-                    navigate('/validation');
-                })
-                .catch((error) => {
-                    console.error("Login error:", error);
-                });
-            console.log("succes")
 
+            try {
+                await loginUser(email, password);
+                console.log("Succès");
+                navigate('/validation');
+            } catch (err) {
+                const error = err as Error | AxiosError;
+
+                if (error instanceof Error && error.message.includes("CORS")) {
+                console.error("⚠️ Problème CORS détecté :", error.message);
+                setError("Impossible de contacter le serveur : vérifie la configuration CORS du backend.");
+                } else {
+                console.error("Erreur de connexion :", error);
+                setError("Une erreur est survenue lors de la connexion.");
+                }
+            }
         }
-    
-
   return (
     <>
         
@@ -62,6 +69,7 @@ function Connexion1() {
                             </div>
                         </div>
                         <button type="submit" onClick={handleSubmit} >Se connecter</button>
+                        {error && <p className="text-red-500">{error}</p>}
 
                     </form>
                 </div>
